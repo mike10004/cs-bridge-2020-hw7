@@ -38,6 +38,7 @@ int main() {
         if (num == numDivisorSum) {
             cout << "perfect: " << num << endl;
         }
+        // only look for greater amicable partners to avoid double-counting
         if (numDivisorSum > num && numDivisorSum <= maxNum) {
             int amiDivisorCount, amiDivisorSum;
             analyzeDivisors(numDivisorSum, amiDivisorCount, amiDivisorSum);
