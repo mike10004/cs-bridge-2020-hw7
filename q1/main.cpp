@@ -10,6 +10,8 @@ using namespace std;
 
 const char SEPARATOR = '\t';
 const int DAYS_PER_WEEK = 7;
+
+// Constants that represent calendar months
 const int M_JAN = 1;
 const int M_FEB = 2;
 const int M_MAR = 3;
@@ -23,6 +25,9 @@ const int M_OCT = 10;
 const int M_NOV = 11;
 const int M_DEC = 12;
 
+// Prints a calendar for a month that has numDays days, where the first day 
+// of the month starts on startingDay, a value in the range [1,7] where 
+// Monday = 1, Tuesday = 2, and so on.
 int printMonthCalendar(int numDays, int startingDay) {
     assert(startingDay >= 1 && startingDay <= DAYS_PER_WEEK);
     cout << "Mon" << SEPARATOR 
@@ -39,7 +44,8 @@ int printMonthCalendar(int numDays, int startingDay) {
             if (day > 1) {
                 cout << SEPARATOR;
             }
-            if ((numDaysPrinted < numDays) && (numDaysPrinted > 0 || day == startingDay)) {
+            if ((numDaysPrinted < numDays) 
+                    && (numDaysPrinted > 0 || day == startingDay)) {
                 numDaysPrinted++;
                 cout << numDaysPrinted;
                 lastDay = day;
@@ -50,10 +56,14 @@ int printMonthCalendar(int numDays, int startingDay) {
     return lastDay;
 }
 
+// Determines whether the given year is a leap year.
+// https://en.wikipedia.org/wiki/Leap_year
 bool isLeapYear(int year) {
     return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
 }
 
+// Gets the number of days in the given month of the given year.
+// The month must be in the range [1,12].
 int getNumDaysInMonth(int month, int year) {
     switch (month) {
         case M_FEB:
@@ -82,6 +92,7 @@ int getNumDaysInMonth(int month, int year) {
     }
 }
 
+// Prints the name of a month, specified as an integer in the range [1,12].
 void printMonthName(int month) {
     switch (month) {
         case M_JAN:
@@ -126,6 +137,10 @@ void printMonthName(int month) {
     }
 }
 
+// Prints all month calendars in the given year, assuming the day of the week 
+// of the first day of the year is specified by startingDay. The value of 
+// startingDay must be an integer in the range [1,7], where Monday = 1, 
+// Tuesday = 2, and so on.
 void printYearCalendar(int year, int startingDay) {
     for (int month = M_JAN; month <= M_DEC; month++) {
         if (month > M_JAN) {
@@ -141,6 +156,7 @@ void printYearCalendar(int year, int startingDay) {
     }
 }
 
+// Prompts user for input and prints a year calendar.
 int main() {
     int calendarYear, calendarStartingDay;
     char* yearStr = getenv("CALENDAR_YEAR");
