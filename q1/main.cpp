@@ -159,15 +159,17 @@ void printYearCalendar(int year, int startingDay) {
 // Prompts user for input and prints a year calendar.
 int main() {
     int calendarYear, calendarStartingDay;
+    // stage: cut start
     char* yearStr = getenv("CALENDAR_YEAR");
     char* dayStr = getenv("CALENDAR_STARTING_DAY");
     if (yearStr != nullptr) {
         calendarYear = (int) strtol(yearStr, nullptr, 10);
         calendarStartingDay = (int) strtol(dayStr, nullptr, 10);
     } else {
+        // stage: cut stop
     cout << "Please enter calendar year and starting day: ";
     cin >> calendarYear >> calendarStartingDay;
-    }
+    } // stage: cut
     printYearCalendar(calendarYear, calendarStartingDay);
     return 0;
 }
