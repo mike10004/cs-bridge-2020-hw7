@@ -141,16 +141,17 @@ void printYearCalendar(int year, int startingDay) {
     }
 }
 
-int main(int argc, char* argv[]) {
-    if (argc != 3) {
-        cerr << "usage error: two arguments required" << endl;
-        return 1;
-    }
+int main() {
     int calendarYear, calendarStartingDay;
-//    cout << "Please enter calendar year and starting day: " << endl;
-//    cin >> calendarYear >> calendarStartingDay;
-    calendarYear = (int) strtol(argv[1], nullptr, 10);
-    calendarStartingDay = (int) strtol(argv[2], nullptr, 10);
+    char* yearStr = getenv("CALENDAR_YEAR");
+    char* dayStr = getenv("CALENDAR_STARTING_DAY");
+    if (yearStr != nullptr) {
+        calendarYear = (int) strtol(yearStr, nullptr, 10);
+        calendarStartingDay = (int) strtol(dayStr, nullptr, 10);
+    } else {
+    cout << "Please enter calendar year and starting day: " << endl;
+    cin >> calendarYear >> calendarStartingDay;
+    }
     printYearCalendar(calendarYear, calendarStartingDay);
     return 0;
 }
