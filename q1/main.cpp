@@ -149,7 +149,7 @@ int main() {
         calendarYear = (int) strtol(yearStr, nullptr, 10);
         calendarStartingDay = (int) strtol(dayStr, nullptr, 10);
     } else {
-    cout << "Please enter calendar year and starting day: " << endl;
+    cout << "Please enter calendar year and starting day: ";
     cin >> calendarYear >> calendarStartingDay;
     }
     printYearCalendar(calendarYear, calendarStartingDay);
