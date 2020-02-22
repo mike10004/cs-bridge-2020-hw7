@@ -27,6 +27,12 @@ void analyzeDivisors(int num, int& outCountDivs, int& outSumDivs) {
     }
 }
 
+bool isPerfect(int num) {
+    int properDivisorSum, properDivisorCount;
+    analyzeDivisors(num, properDivisorCount, properDivisorSum);
+    return num == properDivisorSum;
+}
+
 int main() {
     int maxNum;
     int numDivisorCount, numDivisorSum;
