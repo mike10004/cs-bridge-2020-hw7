@@ -30,12 +30,12 @@ const int M_DEC = 12;
 // Monday = 1, Tuesday = 2, and so on.
 int printMonthCalendar(int numDays, int startingDay) {
     assert(startingDay >= 1 && startingDay <= DAYS_PER_WEEK);
-    cout << "Mon" << SEPARATOR 
-         << "Tue" << SEPARATOR 
-         << "Wed" << SEPARATOR 
-         << "Thu" << SEPARATOR    // question has this as "Thr" 
-         << "Fri" << SEPARATOR 
-         << "Sat" << SEPARATOR 
+    cout << "Mon" << SEPARATOR
+         << "Tue" << SEPARATOR
+         << "Wed" << SEPARATOR
+         << "Thu" << SEPARATOR    // question has this as "Thr"
+         << "Fri" << SEPARATOR
+         << "Sat" << SEPARATOR
          << "Sun" << endl;
     
     int numDaysPrinted = 0, lastDay = 0;
@@ -44,12 +44,12 @@ int printMonthCalendar(int numDays, int startingDay) {
             if (day > 1) {
                 cout << SEPARATOR;
             }
-            if ((numDaysPrinted < numDays) 
+            if ((numDaysPrinted < numDays)
                     && (numDaysPrinted > 0 || day == startingDay)) {
                 numDaysPrinted++;
                 cout << numDaysPrinted;
                 lastDay = day;
-            } 
+            }
         }
         cout << endl;
     }
