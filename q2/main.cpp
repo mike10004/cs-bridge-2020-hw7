@@ -38,16 +38,11 @@ int main() {
         if (num == numDivisorSum) {
             cout << "perfect: " << num << endl;
         }
-        // now look for an amicable partner; 
-        // perfect implies amicable to itself, so start at num + 1
-        for (int maybeAmicable = num + 1; maybeAmicable <= maxNum; maybeAmicable++) {
-            if (numDivisorSum == maybeAmicable) {
-                int amiDivisorCount, amiDivisorSum;
-                analyzeDivisors(maybeAmicable, amiDivisorCount, amiDivisorSum);
-                if (amiDivisorSum == num) {
-                    cout << "amicable: " << num << " and " << maybeAmicable << endl;
-                }
-                break;
+        if (numDivisorSum > num && numDivisorSum <= maxNum) {
+            int amiDivisorCount, amiDivisorSum;
+            analyzeDivisors(numDivisorSum, amiDivisorCount, amiDivisorSum);
+            if (amiDivisorSum == num) {
+                cout << "amicable: " << num << " and " << numDivisorSum << endl;
             }
         }
     }
