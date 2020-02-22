@@ -150,7 +150,7 @@ void printYearCalendar(int year, int startingDay) {
         cout << ' ' << year << endl;
         int numDays = getNumDaysInMonth(month, year);
         int lastDay = printMonthCalendar(numDays, startingDay);
-        // +1 to advance a day, -1 to map [1.7] range to [0,6] range for mod, 
+        // +1 to advance a day, -1 to map [1,7] range to [0,6] range for mod, 
         // and then another +1 to map back to [1,7] range
         startingDay = ((lastDay + 1 - 1) % DAYS_PER_WEEK) + 1;
     }
