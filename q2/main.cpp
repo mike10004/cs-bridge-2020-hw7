@@ -28,20 +28,26 @@ void analyzeDivisors(int num, int& outCountDivs, int& outSumDivs) {
 }
 
 int main() {
-    int maxNum, numProperDivisors, sumOfProperDivisors;
+    int maxNum;
+    int numDivisorCount, numDivisorSum;
     cout << "Enter a positive integer: ";
     cin >> maxNum;
     
     for (int num = 2; num <= maxNum; num++) {
-        analyzeDivisors(num, numProperDivisors, sumOfProperDivisors);
-        if (num == sumOfProperDivisors) {
+        analyzeDivisors(num, numDivisorCount, numDivisorSum);
+        if (num == numDivisorSum) {
             cout << "perfect: " << num << endl;
         }
-        // now look for amicable an amicable partner; 
+        // now look for an amicable partner; 
         // perfect implies amicable to itself, so start at num + 1
-        for (int amicable = num + 1; amicable <= maxNum; amicable++) {
-            if (sumOfProperDivisors == amicable) {
-                cout << "amicable: " << num << " and " << amicable << endl; 
+        for (int maybeAmicable = num + 1; maybeAmicable <= maxNum; maybeAmicable++) {
+            if (numDivisorSum == maybeAmicable) {
+                int amiDivisorCount, amiDivisorSum;
+                analyzeDivisors(maybeAmicable, amiDivisorCount, amiDivisorSum);
+                if (amiDivisorSum == num) {
+                    cout << "amicable: " << num << " and " << maybeAmicable << endl;
+                }
+                break;
             }
         }
     }
