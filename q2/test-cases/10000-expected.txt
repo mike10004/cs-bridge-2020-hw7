@@ -1,0 +1,10 @@
+Enter a positive integer: 10000
+perfect: 6
+perfect: 28
+amicable: 220 and 284
+perfect: 496
+amicable: 1184 and 1210
+amicable: 2620 and 2924
+amicable: 5020 and 5564
+amicable: 6232 and 6368
+perfect: 8128

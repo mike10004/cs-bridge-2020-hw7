@@ -1,0 +1,5 @@
+Enter a positive integer: 500
+perfect: 6
+perfect: 28
+amicable: 220 and 284
+perfect: 496

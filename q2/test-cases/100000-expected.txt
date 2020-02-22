@@ -1,0 +1,18 @@
+Enter a positive integer: 100000
+perfect: 6
+perfect: 28
+amicable: 220 and 284
+perfect: 496
+amicable: 1184 and 1210
+amicable: 2620 and 2924
+amicable: 5020 and 5564
+amicable: 6232 and 6368
+perfect: 8128
+amicable: 10744 and 10856
+amicable: 12285 and 14595
+amicable: 17296 and 18416
+amicable: 63020 and 76084
+amicable: 66928 and 66992
+amicable: 67095 and 71145
+amicable: 69615 and 87633
+amicable: 79750 and 88730
